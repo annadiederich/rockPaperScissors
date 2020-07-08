@@ -26,8 +26,6 @@ class SecondViewController: UIViewController {
         compare()
         populateImages()
         
-        userPickedImage.image = UIImage(named: "rock")
-        
 
         // Do any additional setup after loading the view.
     }
@@ -38,18 +36,18 @@ class SecondViewController: UIViewController {
     
     func populateImages () {
         if userChoice == 0 {
-            userPickedImage.image = UIImage(named: "rock")
+            userPickedImage.image = UIImage(named: "rock.jpg")
         } else if userChoice == 1 {
-            userPickedImage.image = UIImage(named: "scissors")
+            userPickedImage.image = UIImage(named: "scissors.jpg")
         } else if userChoice == 2 {
-            userPickedImage.image = UIImage(named: "paper")
+            userPickedImage.image = UIImage(named: "paper.jpg")
         }
         if computerChoice == 0 {
-            computerPickedImage.image = UIImage(named: "rock")
+            computerPickedImage.image = UIImage(named: "rock.jpg")
         } else if computerChoice == 1 {
-            computerPickedImage.image = UIImage(named: "scissors")
+            computerPickedImage.image = UIImage(named: "scissors.jpg")
         } else if computerChoice == 2 {
-            computerPickedImage.image = UIImage(named: "paper")
+            computerPickedImage.image = UIImage(named: "paper.jpg")
         }
     }
     
