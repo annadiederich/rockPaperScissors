@@ -35,14 +35,19 @@ class SecondViewController: UIViewController {
     }
     
     func populateImages () {
-        if userChoice == 0 {
+        if (userChoice == 3) {
+            userPickedImage.image = nil
+        } else if userChoice == 0 {
             userPickedImage.image = UIImage(named: "rock.jpg")
         } else if userChoice == 1 {
             userPickedImage.image = UIImage(named: "scissors.jpg")
         } else if userChoice == 2 {
             userPickedImage.image = UIImage(named: "paper.jpg")
         }
-        if computerChoice == 0 {
+        
+        if (userChoice == 3) {
+            computerPickedImage.image = nil
+        } else if computerChoice == 0 {
             computerPickedImage.image = UIImage(named: "rock.jpg")
         } else if computerChoice == 1 {
             computerPickedImage.image = UIImage(named: "scissors.jpg")
@@ -68,6 +73,8 @@ class SecondViewController: UIViewController {
         } else if (userChoice == 2 && computerChoice == 0) {
             print ("You won")
              whoWon.text = "You won"
+        } else if (userChoice == 3) {
+            whoWon.text = "You ran out of time"
         } else {
             print ("You lost")
              whoWon.text = "You lost"
