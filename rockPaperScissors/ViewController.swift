@@ -48,11 +48,25 @@ class ViewController: UIViewController {
             self.count = self.count - 1
             self.timerLabel.text = "\(self.count)"
             if (self.count == 0) {
+                
+                let alertController = UIAlertController(title: "Try Again", message: "Please select an image before the timer runs out.", preferredStyle: .alert)
+                
+                let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+                    self.count = 3
+                    
+                    self.timerLabel.text = "3" })
+                
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+                
+                
+                
                 timer.invalidate()
-                self.count = 3
-                self.timerLabel.text = "\(self.count)"
-                self.userChoice = 3
-                self.performSegue(withIdentifier: "segue", sender: nil)
+//                self.count = 3
+//                self.timerLabel.text = "\(self.count)"
+//                self.userChoice = 3
+//                self.performSegue(withIdentifier: "segue", sender: nil)
             }
         }
     }
@@ -78,17 +92,17 @@ class ViewController: UIViewController {
         userChoice = 1
         self.count = 3
         self.timerLabel.text = "\(self.count)"
-         performSegue(withIdentifier: "segue", sender: nil)
+        performSegue(withIdentifier: "segue", sender: nil)
         
         // Your action
     }
     @objc func paperImageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         self.timer.invalidate()
-       userChoice = 2
+        userChoice = 2
         self.count = 3
         self.timerLabel.text = "\(self.count)"
-         performSegue(withIdentifier: "segue", sender: nil) 
+        performSegue(withIdentifier: "segue", sender: nil)
         
         // Your action
     }
